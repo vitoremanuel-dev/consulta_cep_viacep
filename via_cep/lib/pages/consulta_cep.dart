@@ -20,23 +20,23 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
         child: Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Consultar CEP'),
+            const Text('Consultar CEP'),
             TextField(
               keyboardType: TextInputType.number,
               controller: cepController,
               onChanged: (value) async {
-                var cep = value;
+                var cep = value.trim().replaceAll("-", "");
                 if (cep.length == 8) {
                   var response = await http
                       .get(Uri.parse('https://viacep.com.br/ws/$cep/json/'));
-                  print(response.statusCode);
+                  print(response.body);
                 } else {
                   cidade = '';
                   estado = '';
