@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:via_cep/pages/consulta_cep.dart';
+import 'package:via_cep/pages/posts_page.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -11,9 +11,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ConsultaCEP(),
+      home: PostsPage(),
     );
   }
 }
